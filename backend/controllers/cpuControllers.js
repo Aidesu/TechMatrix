@@ -1,4 +1,10 @@
-import { readAllCpu, createCpu, deleteCpu, updateCpu } from "../models/cpu.js";
+import {
+    createCpu,
+    readAllCpu,
+    readOneCpu,
+    deleteCpu,
+    updateCpu,
+} from "../models/cpu.js";
 import Cpu from "../models/cpu.js";
 
 //* CREATE
@@ -17,8 +23,22 @@ export function createCpuController(req, res) {
 //* READ
 export async function readAllCpuController(req, res) {
     try {
-        const cpu = await readAllCpu();
-        return res.status(200).json(cpu);
+        const cpuList = await readAllCpu();
+        return res.status(200).json(cpuList);
+    } catch (e) {
+        return res.status(500).json({ message: e.message });
+    }
+}
+
+export async function readOneCpuController(req, res) {
+    try {
+        const cpuList = await readAllCpu();
+        const cpu = cpuList.find((c) => c._id == req.params.id);
+
+        if (!cpu) {
+            return res.status(404).json({ message: "Cpu not found" });
+        }
+        return res.status(200).json(await readOneCpu(cpu._id));
     } catch (e) {
         return res.status(500).json({ message: e.message });
     }
@@ -26,23 +46,31 @@ export async function readAllCpuController(req, res) {
 
 //* UPDATE
 export async function updateCpuController(req, res) {
-    const cpuList = await readAllCpu();
-    const cpu = cpuList.find((c) => c._id == req.params.id);
-    if (!cpu) {
-        return res.status(404).json({ message: "Cpu not found" });
+    try {
+        const cpuList = await readAllCpu();
+        const cpu = cpuList.find((c) => c._id == req.params.id);
+        if (!cpu) {
+            return res.status(404).json({ message: "Cpu not found" });
+        }
+        const newCpu = req.body;
+        await updateCpu(cpu._id, newCpu);
+        return res.status(200).json({ message: "Cpu has been updated" });
+    } catch (e) {
+        return res.status(500).json({ message: e.message });
     }
-    const newCpu = req.body;
-    await updateCpu(cpu._id, newCpu);
-    return res.status(200).json({ message: "Cpu has been updated" });
 }
 
 //* DELETE
 export async function deleteCpuController(req, res) {
-    const cpuList = await readAllCpu();
-    const cpu = cpuList.find((c) => c._id == req.params.id);
-    if (!cpu) {
-        return res.status(404).json({ message: "Cpu not found" });
+    try {
+        const cpuList = await readAllCpu();
+        const cpu = cpuList.find((c) => c._id == req.params.id);
+        if (!cpu) {
+            return res.status(404).json({ message: "Cpu not found" });
+        }
+        await deleteCpu(cpu._id);
+        return res.status(200).json({ message: "Cpu has been deleted" });
+    } catch (e) {
+        return res.status(500).json({ message: e.message });
     }
-    await deleteCpu(cpu._id);
-    return res.status(200).json({ message: "Cpu has been deleted" });
 }
