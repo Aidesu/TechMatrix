@@ -1,9 +1,9 @@
 import { Router } from "express";
 import {
-	addUserControlleur,
-	getUserControlleur,
-	updateUserControlleur,
-} from "../controlleurs/usersControlleur.js";
+    addUserControlleur,
+    getUserControlleur,
+    updateUserControlleur,
+} from "../controllers/usersControllers.js";
 
 const router = Router();
 
