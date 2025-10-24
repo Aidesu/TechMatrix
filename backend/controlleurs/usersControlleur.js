@@ -1,0 +1,41 @@
+import { getUser, addUser, updateUser } from "../models/users.js";
+
+export async function getUserControlleur(req, res) {
+	try {
+		const users = await getUser();
+
+		if (users.length === 0) {
+			return res.status(400).json({ message: "User don't exist" });
+		}
+
+		return res.status(200).json(users);
+	} catch (err) {
+		return res.status(500).json(err.message);
+	}
+}
+
+export async function addUserControlleur(req, res) {
+	try {
+		const sucess = await addUser(req.body);
+		if (!sucess) {
+			return res.status(409).json({ message: "email already exist" });
+		}
+
+		return res.status(200).json({ user: req.body });
+	} catch (err) {
+		return res.status(500).json({ message: err.message });
+	}
+}
+
+export async function updateUserControlleur(req, res) {
+	try {
+		const sucess = await updateUser({ _id: req.params.id, ...req.body });
+
+		if (!sucess) {
+			return res.status(400).json({ message: "User don't exist" });
+		}
+		return res.status(200).json({ message: "User update" });
+	} catch (err) {
+		return res.status(500).json({ message: err.message });
+	}
+}
