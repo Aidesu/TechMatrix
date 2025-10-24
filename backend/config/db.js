@@ -5,10 +5,10 @@ dotenv.config();
 
 connectDB().catch((err) => console.log(err));
 
-export async function connectDB() {
-	try {
-		await mongoose.connect(process.env.MONGODB_URI);
-	} catch (e) {
-		res.status(500).json({ message: e.message });
-	}
+export async function connectDB(req, res) {
+    try {
+        await mongoose.connect(process.env.MONGODB_URI);
+    } catch (e) {
+        res.status(500).json({ message: e.message });
+    }
 }

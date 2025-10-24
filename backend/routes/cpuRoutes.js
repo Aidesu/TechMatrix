@@ -1,15 +1,15 @@
 import { Router } from "express";
 import {
-  readAllCpuController,
-  createCpuController,
-  updateCpuController,
-  deleteCpuController,
+    createCpuController,
+    readAllCpuController,
+    updateCpuController,
+    deleteCpuController,
 } from "../controllers/cpuControllers.js";
 
 const router = Router();
 
-router.get("/", readAllCpuController);
 router.post("/", createCpuController);
+router.get("/", readAllCpuController);
 router.put("/:id", updateCpuController);
 router.delete("/:id", deleteCpuController);
 
