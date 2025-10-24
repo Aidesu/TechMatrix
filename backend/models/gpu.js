@@ -21,10 +21,11 @@ const Gpu = mongoose.model("Gpu", gpuSchema);
 export default Gpu;
 
 //* CREATE
-export const readAllGpu = async () => await Gpu.find();
+export const createGpu = async (gpu) => await gpu.save();
 
 //* READ
-export const createGpu = async (gpu) => await gpu.save();
+export const readAllGpu = async () => await Gpu.find();
+export const readOneGpu = async (id) => await Gpu.findById(id);
 
 //* UPDATE
 export const updateGpu = async (id, newGpu) =>
