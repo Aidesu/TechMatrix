@@ -1,68 +1,219 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --bgColor1: #000000;
+    --green: #008f11;
+    --select: #00d419;
+    --red: #9c1414;
+    --warn: #9c1414;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+@font-face {
+    font-family: digital-7;
+    src: url("/fonts/digital-7.ttf");
 }
+
+@media screen and (width <= 900px) {
+    #mainSectionCpu {
+        grid-template-columns: 50% 50% !important;
+    }
+}
+
+@media screen and (width <= 600px) {
+    #mainSectionCpu {
+        grid-template-columns: 90% !important;
+    }
+}
+
+* {
+    color: var(--green);
+    font-family: digital-7, Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    cursor: url("/cursors/cursor_normal.png"), default;
+}
+
+h1,
+#headerTitle {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+strong {
+    font-size: 50px;
+}
+
+main {
+    margin-top: 8rem;
+}
+
+button,
+a,
+strong,
+Link {
+    cursor: url("/cursors/cursor_pointer.png"), pointer;
+}
+
 a:hover {
-  color: #535bf2;
+    color: var(--select);
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+strong:hover {
+    color: var(--red);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+    font-size: 20px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: solid var(--green) 3px;
+    padding: 0.4rem 1rem 0.4rem 1rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+hr {
+    background-color: var(--green);
+    border: none;
+    height: 2px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 2%;
+    width: 96%;
+    background-color: var(--bgColor1);
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 30px;
+}
+
+p {
+    text-align: left;
+    font-weight: 600;
+    line-height: 1.7;
+    font-size: 25px;
+}
+
+p a {
+    text-decoration: none;
+}
+
+pre {
+    margin-top: 5rem;
+    white-space: "pre";
+    font-family: monospace;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    margin-top: 5rem;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.54rem;
+}
+
+footer li {
+    text-align: start;
+}
+
+.inView {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+#hardwaresMainSection {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hardwareCard {
+    background-color: transparent;
+    width: 25%;
+    height: 18rem;
+    padding: 0.5rem;
+    border: solid var(--green) 5px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.hardwareCard svg {
+    width: 80%;
+    fill: var(--green);
+}
+
+.hardwareCard img {
+    fill: var(--green);
+}
+
+.unvalable {
+    border: solid var(--green) 5px;
+}
+
+#mainSectionComponent {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.componentCard {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: solid var(--green) 5px;
+    padding: 0rem;
+    border-radius: 25px;
+    justify-content: space-around;
+}
+
+.componentCard ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+.componentCard li {
+    font-size: 25px;
+}
+.componentCard p {
+    padding: 0;
+    margin: 0;
 }
