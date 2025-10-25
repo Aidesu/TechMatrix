@@ -1,5 +1,7 @@
-import { getData } from "../../api/api";
+import { getDataCpu } from "../../api/api";
 import { Link } from "react-router-dom";
+
+const cpu = await getDataCpu();
 
 export default function Cpu() {
     return (
@@ -11,26 +13,37 @@ export default function Cpu() {
                     [OK] Connection established to hardware database.
                 </p>
                 <h1>Bouh je suis le cpu</h1>
-                <section id="mainSectionCpu">
-                    {/* {cpu.map((c, index) => ( */}
-                    <div class="cpuCard">
-                        <ul>
-                            <li>
-                                Brand : <p>c.brand</p>
-                            </li>
-                            <li>
-                                Series : <p>Ryzen 9</p>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                Model : <p>9950X3D</p>
-                            </li>
-                        </ul>
-                    </div>
-                    {/* ))} */}
+                <section id="mainSectionComponent">
+                    {cpu.map((c, i) => (
+                        <div class="componentCard" key={i}>
+                            <ul>
+                                <li>
+                                    Brand : <p>{c.brand}</p>
+                                </li>
+                                <li>
+                                    Series : <p>{c.series}</p>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Model : <p>{c.model_number}</p>
+                                </li>
+                                <li>
+                                    Socket : <p>{c.socket}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    ))}
                 </section>
-                bouh
+                <p>
+                    [OK] CPU module loaded.
+                    <br />
+                    [OK] Memory module loaded.
+                    <br />
+                    &gt; System startup complete.
+                    <br />
+                    &gt; Welcome to TechMatrix Dashboard.
+                </p>
             </main>
         </>
     );

@@ -11,7 +11,6 @@ export default function Footer() {
                     <li>Brian's Kitchen SAS.</li>
                 </ul>
             </footer>
-            ;
         </>
     );
 }

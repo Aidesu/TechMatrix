@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/users", usersRoute);
-app.use("/cpu", cpuRoutes);
-app.use("/gpu", gpuRoutes);
+app.use("/cpu", cors(), cpuRoutes);
+app.use("/gpu", cors(), gpuRoutes);
 
 app.listen(port, () => console.log("Server start on port : " + port));

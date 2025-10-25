@@ -53,6 +53,17 @@ export default function Hardwares() {
                         </Link>
                     </div>
                 </section>
+                <p>
+                    [OK] CPU module loaded.
+                    <br />
+                    [OK] GPU module loaded.
+                    <br />
+                    [OK] Memory module loaded.
+                    <br />
+                    &gt; System startup complete.
+                    <br />
+                    &gt; _
+                </p>
             </main>
         </>
     );

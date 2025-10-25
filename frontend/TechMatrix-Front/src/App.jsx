@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Header from "./views/layouts/partials/Header.jsx";
 import Footer from "./views/layouts/partials/Footer.jsx";
-import { useState } from "react";
 import "./App.css";
 import HomePage from "./views/home/HomePage.jsx";
 import Hardwares from "./views/hardwares/Hardwares.jsx";
