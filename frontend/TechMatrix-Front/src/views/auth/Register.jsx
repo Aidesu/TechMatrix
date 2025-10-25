@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { registerUser } from "../../api/api.jsx";
 
+
 export default function Register() {
     const [formUser, setformUser] = useState({
         username: "",
@@ -37,7 +38,7 @@ export default function Register() {
         const userData = await registerUser(formUser);
         if (userData.success) {
             setMessage("Register successful !");
-            setformData({
+            setformUser({
                 username: "",
                 firstName: "",
                 lastName: "",
@@ -55,58 +56,67 @@ export default function Register() {
             <main>
                 <h1>Sign up</h1>
                 <form id="registerForm" method="post" onSubmit={handleSubmit}>
-                    <label htmlFor="username">Username : </label>
-                    <input
-                        type="text"
-                        name="username"
-                        value={formUser.username}
-                        onChange={handleChange}
-                    />
 
-                    <label htmlFor="firstName">First name : </label>
-                    <input
-                        type="text"
-                        name="firstName"
-                        value={formUser.firstName}
-                        onChange={handleChange}
-                    />
+                    <div class="divForm">
+                        <label htmlFor="firstName" class="labelForm">First name : </label>
+                        <input
+                            class="inputForm"
+                            type="text"
+                            name="firstName"
+                            value={formUser.firstName}
+                            onChange={handleChange}
+                            placeholder="Enter your name"
+                        />
+                    </div>
 
-                    <label htmlFor="lastName">Last name : </label>
-                    <input
-                        type="text"
-                        name="lastName"
-                        value={formUser.lastName}
-                        onChange={handleChange}
-                    />
+                    <div class="divForm">
+                        <label htmlFor="lastName" class="labelForm">Last name : </label>
+                        <input
+                            class="inputForm"
+                            type="text"
+                            name="lastName"
+                            value={formUser.lastName}
+                            onChange={handleChange}
+                            placeholder="Enter your last name"
+                        />
+                    </div>
 
-                    <label htmlFor="email">Email address : </label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={formUser.email}
-                        onChange={handleChange}
-                    />
+                    <div class="divForm">
+                        <label htmlFor="email" class="labelForm" >Email address : </label>
+                        <input
+                            class="inputForm"
+                            type="email"
+                            name="email"
+                            value={formUser.email}
+                            onChange={handleChange}
+                            placeholder="Enter your email"
+                        />
+                    </div>
 
-                    <label htmlFor="password">Password : </label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={formUser.password}
-                        onChange={handleChange}
-                    />
+                    <div class="divForm">  <label htmlFor="password" class="labelForm" >Password : </label>
+                        <input
+                            class="inputForm"
+                            type="password"
+                            name="password"
+                            value={formUser.password}
+                            onChange={handleChange}
+                            placeholder="Enter your password"
+                        /></div>
 
-                    <label htmlFor="ConfirmPassword">
-                        {" "}
-                        Confirm Password :{" "}
-                    </label>
-                    <input
-                        type="password"
-                        name="confirmPassword"
-                        value={formUser.confirmPassword}
-                        onChange={handleChange}
-                    />
-
-                    <button type="submit">Sign Up</button>
+                    <div class="divForm">
+                        <label htmlFor="ConfirmPassword" class="labelForm">Confirm Password :</label>
+                        <input
+                            class="inputForm"
+                            type="password"
+                            name="confirmPassword"
+                            value={formUser.confirmPassword}
+                            onChange={handleChange}
+                            placeholder="Confirm your password"
+                        />
+                    </div>
+                    {message && (<p className="formMessage ">{message}</p>)}
+                    <br />
+                    <button type="submit" class="btnRegister">Sign Up</button>
                 </form>
             </main>
         </>
