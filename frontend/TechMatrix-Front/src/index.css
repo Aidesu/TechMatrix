@@ -249,6 +249,7 @@ a:hover svg {
     border-radius: 25px;
     justify-content: space-around;
     position: relative;
+    height: 10rem;
 }
 
 .componentCard:hover {
@@ -311,4 +312,9 @@ a:hover svg {
 
 #mainNotFound h1 {
     color: var(--alert);
+}
+#ulGpuItem li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }

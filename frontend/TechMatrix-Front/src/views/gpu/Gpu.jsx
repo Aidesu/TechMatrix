@@ -25,20 +25,10 @@ export default function Gpu() {
                     {gpu &&
                         gpu.map((g, i) => (
                             <div class="componentCard" key={i}>
-                                <ul>
+                                <ul id="ulGpuItem">
+                                    <p>{g.brand + " " + g.series}</p>
                                     <li>
-                                        Brand : <p>{g.brand}</p>
-                                    </li>
-                                    <li>
-                                        Series : <p>{g.series}</p>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        Vram type : <p>{g.vram.vram_type}</p>
-                                    </li>
-                                    <li>
-                                        Vram type : <p>{g.vram.vram_type}</p>
+                                        assembler : <p>{g.assembler}</p>
                                     </li>
                                 </ul>
                                 <Link to={"/hardwares/gpu/" + g._id}></Link>
