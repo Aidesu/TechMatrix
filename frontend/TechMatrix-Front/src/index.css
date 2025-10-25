@@ -4,6 +4,7 @@
     --select: #00d419;
     --red: #9c1414;
     --warn: #9c1414;
+    --none: #232323;
 }
 
 @font-face {
@@ -27,7 +28,7 @@
     color: var(--green);
     font-family: digital-7, Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
-    cursor: url("/cursors/cursor_normal.png"), default;
+    cursor: url("/cursors/cursor_normal.png") 9 1, default;
 }
 
 h1,
@@ -41,14 +42,14 @@ strong {
 }
 
 main {
-    margin-top: 8rem;
+    margin-top: 6rem;
 }
 
 button,
 a,
 strong,
 Link {
-    cursor: url("/cursors/cursor_pointer.png"), pointer;
+    cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
 }
 
 a:hover {
@@ -160,28 +161,49 @@ footer li {
 
 .hardwareCard {
     background-color: transparent;
-    width: 25%;
-    height: 18rem;
-    padding: 0.5rem;
-    border: solid var(--green) 5px;
+    width: 28%;
+    height: 20rem;
+    border: solid var(--green) 10px;
     border-radius: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 4rem;
+    z-index: 999;
 }
 
 .hardwareCard svg {
     width: 80%;
     fill: var(--green);
+    z-index: -5;
+}
+
+.hardwareCard a:hover {
+    cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
 }
 
 .hardwareCard img {
     fill: var(--green);
 }
 
+.hardwareCard a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .unvalable {
-    border: solid var(--green) 5px;
+    border: solid var(--none) 10px;
+}
+
+.unvalable svg {
+    fill: var(--none);
+}
+.unvalable a:hover {
+    cursor: url("/cursors/cursor_normal.png") 9 1, pointer;
 }
 
 #mainSectionComponent {
@@ -190,6 +212,7 @@ footer li {
     gap: 2rem;
     justify-content: center;
     margin-bottom: 4rem;
+    margin-top: 4rem;
 }
 
 .componentCard {
@@ -200,6 +223,7 @@ footer li {
     padding: 0rem;
     border-radius: 25px;
     justify-content: space-around;
+    position: relative;
 }
 
 .componentCard ul {
@@ -216,4 +240,11 @@ footer li {
 .componentCard p {
     padding: 0;
     margin: 0;
+}
+
+.componentCard a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
 }
