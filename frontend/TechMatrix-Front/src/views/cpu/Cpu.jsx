@@ -8,11 +8,11 @@ export default function Cpu() {
         <>
             <main>
                 <p>
-                    &gt; Initializing TechMatrix/hardwares system...
+                    &gt; Initializing TechMatrix/hardwares/cpu system...
                     <br />
-                    [OK] Connection established to hardware database.
+                    [OK] Connection established to hardware/cpu database.
                 </p>
-                <h1>Bouh je suis le cpu</h1>
+                <h1>cpu database</h1>
                 <section id="mainSectionComponent">
                     {cpu.map((c, i) => (
                         <div class="componentCard" key={i}>
@@ -21,7 +21,7 @@ export default function Cpu() {
                                     Brand : <p>{c.brand}</p>
                                 </li>
                                 <li>
-                                    Series : <p>{c.series}</p>
+                                    Cores : <p>{c.cores}</p>
                                 </li>
                             </ul>
                             <ul>

@@ -2,6 +2,11 @@ export default function About() {
     return (
         <>
             <main>
+                <p>
+                    &gt; Initializing TechMatrix/about system...
+                    <br />
+                    [OK] Connection established to about database.
+                </p>
                 <h1>About TechMatrix</h1>
                 <p>
                     TechMatrix is a web platform designed to help users navigate
