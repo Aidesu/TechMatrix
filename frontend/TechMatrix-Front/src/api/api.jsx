@@ -15,3 +15,9 @@ export async function getDataOneCpu(id) {
     const cpu = await response.json();
     return cpu;
 }
+
+export async function getDataOneGpu(id) {
+    const response = await fetch("http://localhost:3000/gpu/" + id);
+    const gpu = await response.json();
+    return gpu;
+}

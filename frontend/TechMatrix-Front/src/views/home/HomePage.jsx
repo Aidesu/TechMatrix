@@ -15,7 +15,7 @@ export default function HomePage() {
                 <p id="firstP">
                     &gt; Initializing TechMatrix system...
                     <br />
-                    [OK] Connection established to hardware database.
+                    [OK] Connection established to TechMatrix database.
                     <br />
                     <br />
                     Welcome, user.

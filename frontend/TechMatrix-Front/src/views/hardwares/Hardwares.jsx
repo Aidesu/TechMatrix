@@ -8,7 +8,7 @@ export default function Hardwares() {
                     <br />
                     [OK] Connection established to hardware database.
                 </p>
-                <h1>This is Hardwares page</h1>
+                <h1>hardware database</h1>
                 <section id="hardwaresMainSection">
                     <div class="hardwareCard">
                         <Link to="/hardwares/cpu">

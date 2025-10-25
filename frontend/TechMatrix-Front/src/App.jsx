@@ -7,7 +7,9 @@ import Hardwares from "./views/hardwares/Hardwares.jsx";
 import Cpu from "./views/cpu/Cpu.jsx";
 import CpuItem from "./views/cpu/CpuItem.jsx";
 import Gpu from "./views/gpu/Gpu.jsx";
+import GpuItem from "./views/gpu/GpuItem.jsx";
 import About from "./views/About/About.jsx";
+import NotFound from "./views/notFound/NotFound.jsx";
 
 function App() {
     return (
@@ -19,7 +21,9 @@ function App() {
                 <Route path={`/hardwares/cpu`} element={<Cpu />} />
                 <Route path={`/hardwares/cpu/:id`} element={<CpuItem />} />
                 <Route path={`/hardwares/gpu`} element={<Gpu />} />
+                <Route path={`/hardwares/gpu/:id`} element={<GpuItem />} />
                 <Route path={`/about`} element={<About />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
         </>
