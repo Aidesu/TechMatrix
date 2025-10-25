@@ -5,6 +5,7 @@ import "./App.css";
 import HomePage from "./views/home/HomePage.jsx";
 import Hardwares from "./views/hardwares/Hardwares.jsx";
 import Cpu from "./views/cpu/Cpu.jsx";
+import CpuItem from "./views/cpu/CpuItem.jsx";
 import Gpu from "./views/gpu/Gpu.jsx";
 import About from "./views/About/About.jsx";
 
@@ -16,6 +17,7 @@ function App() {
                 <Route path={`/`} element={<HomePage />} />
                 <Route path={`/hardwares`} element={<Hardwares />} />
                 <Route path={`/hardwares/cpu`} element={<Cpu />} />
+                <Route path={`/hardwares/cpu/:id`} element={<CpuItem />} />
                 <Route path={`/hardwares/gpu`} element={<Gpu />} />
                 <Route path={`/about`} element={<About />} />
             </Routes>

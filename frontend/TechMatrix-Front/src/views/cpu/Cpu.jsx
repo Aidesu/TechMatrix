@@ -32,6 +32,7 @@ export default function Cpu() {
                                     Socket : <p>{c.socket}</p>
                                 </li>
                             </ul>
+                            <Link to={"/hardwares/cpu/" + c._id}></Link>
                         </div>
                     ))}
                 </section>
