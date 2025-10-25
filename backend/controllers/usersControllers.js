@@ -43,7 +43,7 @@ export async function addUserControlleur(req, res) {
 			return res.status(409).json({ message: "email already exist" });
 		}
 
-		return res.status(200).json({ user: req.body });
+		return res.status(200).json({ message: "Resgistration Successful" });
 	} catch (err) {
 		return res.status(500).json({ message: err.message });
 	}

@@ -24,7 +24,15 @@ export async function addUser(newUser) {
 		return false;
 	}
 
-	const user = new User(newUser);
+	const saltRounds = 10;
+	const password_hash = await bcrypt.hash(newUser.password, saltRounds);
+
+
+	const user = new User({
+		...newUser,
+		password: password_hash,
+	});
+
 	await user.save();
 	return true;
 }
