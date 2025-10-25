@@ -21,7 +21,7 @@ export default function Gpu() {
                     [OK] Connection established to hardware/gpu database.
                 </p>
                 <h1>gpu database</h1>
-                <section id="mainSectionComponent">
+                <section id="mainSectionGpu">
                     {gpu &&
                         gpu.map((g, i) => (
                             <div class="componentCard" key={i}>

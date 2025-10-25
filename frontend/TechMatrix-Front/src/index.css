@@ -240,6 +240,17 @@ a:hover svg {
     margin-top: 4rem;
 }
 
+#mainSectionGpu {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: repeat(8, 30%);
+    row-gap: 4em;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
 .componentCard {
     width: 100%;
     display: flex;
