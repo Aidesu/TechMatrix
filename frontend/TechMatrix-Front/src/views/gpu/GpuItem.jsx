@@ -19,7 +19,6 @@ export default function GpuItem() {
         <>
             <h1>gpu</h1>
             <main>
-                <label htmlFor="brand">Brand :</label>
                 <section id="cpuItemSection">
                     {gpu ? (
                         <>
@@ -27,7 +26,6 @@ export default function GpuItem() {
                             <ul>
                                 <li>
                                     {gpu.brand + " "}
-                                    {gpu.assembler + " "}
                                     {gpu.series + " "}
                                     {gpu.vram.vram_memory + "G"}
                                 </li>
