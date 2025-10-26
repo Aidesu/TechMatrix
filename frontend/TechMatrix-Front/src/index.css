@@ -13,13 +13,13 @@
     src: url("/fonts/digital-7.ttf");
 }
 
-@media screen and (width <= 900px) {
+@media screen and (width <=900px) {
     #mainSectionCpu {
         grid-template-columns: 50% 50% !important;
     }
 }
 
-@media screen and (width <= 600px) {
+@media screen and (width <=600px) {
     #mainSectionCpu {
         grid-template-columns: 90% !important;
     }
@@ -225,6 +225,7 @@ a:hover svg {
 .unvalable svg {
     fill: var(--none);
 }
+
 .unvalable a:hover {
     cursor: url("/cursors/cursor_normal.png") 9 1, pointer;
 }
@@ -278,6 +279,7 @@ a:hover svg {
 .componentCard li {
     font-size: 25px;
 }
+
 .componentCard p {
     padding: 0;
     margin: 0;
@@ -324,8 +326,62 @@ a:hover svg {
 #mainNotFound h1 {
     color: var(--alert);
 }
+
 #ulGpuItem li {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+
+/* ++++++++++++++ REGISTER +++++++++++++++++ */
+.divForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    width: 65%;
+    margin-bottom: 20px;
+}
+
+.labelForm {
+    width: 260px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+
+
+}
+
+.btnRegister {
+    margin-top: 15px;
+}
+
+
+.inputForm {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 5px;
+    background-color: #232323;
+    color: white;
+    font-size: 16px;
+
+}
+
+.formMessage {
+    color: var(--red);
+}
+
+
+@media (max-width: 768px) {
+
+    .divForm {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 90%;
+        margin: 0 auto 15px auto;
+    }
+
 }
