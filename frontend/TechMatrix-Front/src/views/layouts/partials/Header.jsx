@@ -5,9 +5,9 @@ export default function Header() {
         <>
             <header>
                 <div>
-                    <a id="headerTitle" href="">
+                    <Link id="headerTitle" to="/">
                         <strong>T</strong>ech<strong>M</strong>atrix
-                    </a>
+                    </Link>
                     <nav>
                         <ul>
                             <li>
