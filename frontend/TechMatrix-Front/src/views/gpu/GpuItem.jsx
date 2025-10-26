@@ -19,13 +19,7 @@ export default function GpuItem() {
         <>
             <h1>gpu</h1>
             <main>
-                <p>
-                    &gt; Initializing TechMatrix/hardwares/gpu/
-                    {params.id + " "}
-                    system...
-                    <br />
-                    [OK] Connection established to hardware/gpu database.
-                </p>
+                <label htmlFor="brand">Brand :</label>
                 <section id="cpuItemSection">
                     {gpu ? (
                         <>
