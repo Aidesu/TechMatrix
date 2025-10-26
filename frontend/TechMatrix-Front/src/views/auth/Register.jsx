@@ -58,6 +58,18 @@ export default function Register() {
                 <form id="registerForm" method="post" onSubmit={handleSubmit}>
 
                     <div class="divForm">
+                        <label htmlFor="username" class="labelForm">Username : </label>
+                        <input
+                            class="inputForm"
+                            type="text"
+                            name="username"
+                            value={formUser.username}
+                            onChange={handleChange}
+                            placeholder="Enter your username"
+                        />
+                    </div>
+
+                    <div class="divForm">
                         <label htmlFor="firstName" class="labelForm">First name : </label>
                         <input
                             class="inputForm"
@@ -93,7 +105,8 @@ export default function Register() {
                         />
                     </div>
 
-                    <div class="divForm">  <label htmlFor="password" class="labelForm" >Password : </label>
+                    <div class="divForm">
+                        <label htmlFor="password" class="labelForm" >Password : </label>
                         <input
                             class="inputForm"
                             type="password"
@@ -114,7 +127,7 @@ export default function Register() {
                             placeholder="Confirm your password"
                         />
                     </div>
-                    {message && (<p className="formMessage ">{message}</p>)}
+                    {message && (<p class="formMessage ">{message}</p>)}
                     <br />
                     <button type="submit" class="btnRegister">Sign Up</button>
                 </form>

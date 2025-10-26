@@ -32,3 +32,17 @@ export async function registerUser(formUser) {
     const users = await response.json();
     return users;
 }
+
+export async function loginUser(userLogin) {
+
+    const response = await fetch("http://localhost:3000/users/login", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(userLogin),
+    })
+    const login = await response.json();
+    return login;
+
+}
+
+

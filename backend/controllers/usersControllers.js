@@ -88,14 +88,14 @@ export async function loginUserControlleur(req, res) {
 		const { email, password } = req.body;
 		const user = await loginUser(email, password);
 
-		if (!user || !password) {
-			return res.status(401).json({ message: "invalide email or password" });
+		if (!user) {
+			return res.status(401).json({ success: false, message: "invalide email or password" });
 		}
 
-		return res.status(200).json({ message: "Login successful", user })
+		return res.status(200).json({ success: true, message: "Login successful" })
 
 	} catch (err) {
-		return res.status(500).json({ message: err.message });
+		return res.status(500).json({ success: false, message: err.message });
 	}
 }
 
