@@ -460,4 +460,51 @@ a:hover svg {
         width: 90%;
         margin: 0 auto 15px auto;
     }
+
+}
+
+/* ++++++++ LOGIN +++++++++++ */
+
+.divLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    width: 65%;
+    margin-bottom: 20px;
+}
+
+
+.labelLogin {
+    width: 260px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.inputLogin {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 5px;
+    background-color: #232323;
+    color: white;
+    font-size: 16px;
+
+}
+
+.loginMessage {
+    color: var(--red);
+}
+
+@media (max-width: 768px) {
+
+    .divLogin {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 90%;
+        margin: 0 auto 15px auto;
+    }
+
 }
