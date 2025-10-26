@@ -35,7 +35,19 @@ export default function Register() {
             return;
         }
 
-        const userData = await registerUser(formUser);
+        //reformatter avant envoit pour le backend
+        const formattedUser = {
+            username: formUser.username,
+            name: {
+                first_name: formUser.firstName,
+                last_name: formUser.lastName,
+            },
+            email: formUser.email,
+            password: formUser.password,
+            joined_at: new Date()
+        };
+
+        const userData = await registerUser(formattedUser);
         if (userData.success) {
             setMessage("Register successful !");
             setformUser({
