@@ -24,9 +24,10 @@ export default function Login() {
 
             if (infoLogin.success) {
                 setMessage("Login successful !")
+                localStorage.setItem("user", JSON.stringify(infoLogin.user))
                 navigate("/");
             } else {
-                setMessage(infoUser.message || "Password or email invalid");
+                setMessage(infoLogin.message || "Password or email invalid");
             }
 
         } catch (err) {
