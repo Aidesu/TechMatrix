@@ -11,6 +11,11 @@ export default function Header() {
                     <nav>
                         <ul>
                             <li>
+                                <Link class="admin" to="/dashboard">
+                                    Dashboard
+                                </Link>
+                            </li>
+                            <li>
                                 <Link to="/">Home</Link>
                             </li>
                             <li>

@@ -11,6 +11,9 @@ import GpuItem from "./views/gpu/GpuItem.jsx";
 import About from "./views/About/About.jsx";
 import NotFound from "./views/notFound/NotFound.jsx";
 import Register from "./views/auth/Register.jsx";
+import Dashboard from "./views/dashboard/Dashboard.jsx";
+import HardwaresDashBoard from "./views/dashboard/hardwares/HardwaresDashBoard.jsx";
+import UsersDashBoard from "./views/dashboard/users/UsersDashBoard.jsx";
 
 function App() {
     return (
@@ -25,6 +28,12 @@ function App() {
                 <Route path={`/hardwares/gpu/:id`} element={<GpuItem />} />
                 <Route path={`/about`} element={<About />} />
                 <Route path="/register" element={<Register />} />
+                <Route path={`/dashboard`} element={<Dashboard />} />
+                <Route
+                    path={`/dashboard/hardwares`}
+                    element={<HardwaresDashBoard />}
+                />
+                <Route path={`/dashboard/users`} element={<UsersDashBoard />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
