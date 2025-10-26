@@ -25,7 +25,7 @@ export default function UsersDashBoard() {
                                 <th>Username</th>
                                 <th>first name</th>
                                 <th>last name</th>
-                                <th>email</th>
+                                <th>email address</th>
                             </tr>
                         </thead>
                         <tbody>

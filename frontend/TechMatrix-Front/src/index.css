@@ -49,7 +49,7 @@ main {
 
 button,
 a,
-strong,
+a strong,
 Link {
     cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
 }
