@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 
 export default function Gpu() {
     const [gpu, setGpu] = useState(null);
+
     useEffect(() => {
         async function fetchData() {
             const gpu = await getDataGpu();
             setGpu(gpu);
+            setFilterGpu(gpu);
         }
         fetchData();
     }, []);
@@ -26,9 +28,12 @@ export default function Gpu() {
                         gpu.map((g, i) => (
                             <div class="componentCard" key={i}>
                                 <ul id="ulGpuItem">
-                                    <p>{g.brand + " " + g.series}</p>
+                                    <p>{g.series}</p>
                                     <li>
                                         assembler : <p>{g.assembler}</p>
+                                    </li>
+                                    <li>
+                                        vram : <p>{g.vram.vram_memory} GB</p>
                                     </li>
                                 </ul>
                                 <Link to={"/hardwares/gpu/" + g._id}></Link>
