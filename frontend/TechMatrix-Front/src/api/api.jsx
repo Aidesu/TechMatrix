@@ -90,3 +90,14 @@ export async function getUserById(id) {
     const userByIdResponse = await response.json();
     return userByIdResponse;
 }
+
+export async function updateUser(id, updateUser) {
+    const reponse = await fetch(`http://localhost:3000/users/${id}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(updateUser),
+
+    })
+    const editUser = await reponse.json();
+    return editUser;
+}
