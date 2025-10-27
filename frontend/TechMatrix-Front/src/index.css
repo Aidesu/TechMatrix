@@ -565,6 +565,8 @@ a:hover svg {
     margin: 0;
     padding: 0;
     border: none;
+    padding-right: 0.5rem;
+    cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
 }
 
 .admin td button svg {
@@ -573,11 +575,9 @@ a:hover svg {
 
 .admin svg {
     fill: var(--purple);
+    cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
 }
 
-#actionAdmin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+#actionAdmin a {
+    padding-left: 0.5rem;
 }

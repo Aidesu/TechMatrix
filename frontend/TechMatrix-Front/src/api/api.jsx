@@ -66,3 +66,11 @@ export async function deleteCpu(id) {
     const deleteCpuResponse = await response.json();
     return deleteCpuResponse;
 }
+
+export async function deleteGpu(id) {
+    const response = await fetch(`http://localhost:3000/gpu/${id}`, {
+        method: "DELETE",
+    });
+    const deleteGpuResponse = await response.json();
+    return deleteGpuResponse;
+}
