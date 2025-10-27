@@ -47,7 +47,7 @@ export default function Header() {
                             </li>
                             <li>
                                 {user ? (
-                                    <Link to="/account">{user.username}
+                                    <Link className="user-link" to="/account">{user.username}
                                         <img src={user.image || "https://bleedingcool.com/wp-content/uploads/2023/10/fallout-1-900x900.jpg"} class="avatar"></img>
                                     </Link>
 
