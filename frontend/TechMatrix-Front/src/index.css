@@ -529,8 +529,48 @@ a:hover svg {
     }
 }
 
-.dashboardItem {
+
+
+/* ++++++++++++ Account ++++++++++++ */
+
+.account-container {
+    display: flex;
+    align-items: flex-start;
+
 }
+
+.account-image img {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.account-buttons {
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.btn-disconect {
+    color: #9c1414;
+}
+
+@media (max-width: 768px) {
+    .account-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.dashboardItem {}
 
 .dashboardItem ul {
     display: flex;
@@ -591,4 +631,11 @@ a:hover svg {
 
 #actionAdmin a {
     padding-left: 0.5rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }

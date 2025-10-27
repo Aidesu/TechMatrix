@@ -46,7 +46,8 @@ export default function Register() {
             },
             email: formUser.email,
             password: formUser.password,
-            joined_at: new Date()
+            joined_at: new Date(),
+            image: "https://bleedingcool.com/wp-content/uploads/2023/10/fallout-1-900x900.jpg"
         };
 
         const userData = await registerUser(formattedUser);
