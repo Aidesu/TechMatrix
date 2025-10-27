@@ -42,6 +42,16 @@ h1,
     font-weight: 600;
 }
 
+#headerTitle {
+    display: flex;
+    align-items: center;
+}
+
+#headerTitle img {
+    height: 3rem;
+    margin-right: 0.5rem;
+}
+
 strong {
     font-size: 50px;
 }
@@ -54,6 +64,7 @@ main {
 button,
 a,
 a strong,
+a img,
 Link {
     cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
 }
