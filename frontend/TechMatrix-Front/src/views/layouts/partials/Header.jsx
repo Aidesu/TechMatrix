@@ -22,12 +22,12 @@ export default function Header() {
                                 <Link to="/about">About</Link>
                             </li>
                             <li>
-                                <a href="#">
-                                    <Link to="/hardwares">Hardwares</Link>
-                                </a>
+
+                                <Link to="/hardwares">Hardwares</Link>
+
                             </li>
                             <li>
-                                <a href="#">Account</a>
+                                <Link to="/account">Account</Link>
                             </li>
                         </ul>
                     </nav>

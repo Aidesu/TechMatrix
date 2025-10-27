@@ -24,7 +24,7 @@ export default function Login() {
 
             if (infoLogin.success) {
                 setMessage("Login successful !")
-                localStorage.setItem("user", JSON.stringify(infoLogin.user))
+                localStorage.setItem("user", JSON.stringify(infoLogin.user._id))
                 navigate("/");
             } else {
                 setMessage(infoLogin.message || "Password or email invalid");
