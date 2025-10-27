@@ -1,3 +1,5 @@
+import RedirectToHome from "../../../assets/components/redirect/RedirectToHome";
+
 export default function CreateCpuDashboard() {
     return (
         <>
