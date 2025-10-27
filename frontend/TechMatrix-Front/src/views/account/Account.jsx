@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Account() {
-
     const [user, setUser] = useState(null);
     const getLocalUser = localStorage.getItem("user");
     const navigate = useNavigate();
@@ -46,5 +45,5 @@ export default function Account() {
             </div>
 
         </main>
-    )
+    );
 }

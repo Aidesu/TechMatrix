@@ -10,8 +10,6 @@ export default function Header() {
         async function fetchData() {
             if (!userId) return;
             const userData = await getUserById(userId);
-            console.log(userId);
-            console.log(userData);
             setUser(userData);
         }
         fetchData();
@@ -27,11 +25,17 @@ export default function Header() {
                     </Link>
                     <nav>
                         <ul>
-                            <li>
-                                <Link class="admin" to="/dashboard">
-                                    Dashboard
-                                </Link>
-                            </li>
+                            {user && user.role == "admin" ? (
+                                <>
+                                    <li>
+                                        <Link class="admin" to="/dashboard">
+                                            Dashboard
+                                        </Link>
+                                    </li>
+                                </>
+                            ) : (
+                                <></>
+                            )}
                             <li>
                                 <Link to="/">Home</Link>
                             </li>

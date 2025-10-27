@@ -190,7 +190,7 @@ export default function HardwaresDashBoard() {
                                             </button>
                                             <Link
                                                 to={
-                                                    "/dashboard/hardwares/cpu/" +
+                                                    "/dashboard/hardwares/gpu/" +
                                                     g._id
                                                 }
                                             >
