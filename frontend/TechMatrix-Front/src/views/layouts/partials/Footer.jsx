@@ -2,6 +2,7 @@ export default function Footer() {
     return (
         <>
             <footer>
+                <hr />
                 <ul>
                     <li>
                         © 2025 The deafiaa space company SARL. All right

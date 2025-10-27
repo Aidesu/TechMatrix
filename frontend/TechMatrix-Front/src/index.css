@@ -64,6 +64,7 @@ strong {
 main {
     margin-top: 6rem;
     min-height: 90vh;
+    position: relative;
 }
 
 button,
@@ -110,15 +111,22 @@ hr {
     background-color: var(--green);
     border: none;
     height: 2px;
+    width: 95%;
 }
 
 header {
     position: fixed;
     top: 0;
-    left: 2%;
+    left: 50%;
+    transform: translate(-50%);
     width: 96%;
     background-color: var(--bgColor1);
     z-index: 9999999;
+    max-width: 2200px;
+}
+
+header hr {
+    width: 100%;
 }
 
 header div {
@@ -172,10 +180,14 @@ pre {
 footer {
     width: 100%;
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translate(-50%);
     height: 10rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    max-width: 2200px;
+    margin-top: 5rem;
 }
 
 footer ul {
@@ -667,6 +679,6 @@ a:hover svg {
 }
 
 .backBtn {
-    position: fixed;
-    left: 4rem;
+    position: absolute;
+    left: -8rem;
 }
