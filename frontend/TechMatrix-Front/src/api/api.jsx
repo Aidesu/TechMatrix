@@ -59,6 +59,16 @@ export async function editCpu(id, cpuObj) {
     return editCpuResponse;
 }
 
+export async function editGpu(id, gpuObj) {
+    const response = await fetch(`http://localhost:3000/gpu/${id}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(gpuObj),
+    });
+    const editGpuResponse = await response.json();
+    return editGpuResponse;
+}
+
 export async function deleteCpu(id) {
     const response = await fetch(`http://localhost:3000/cpu/${id}`, {
         method: "DELETE",
