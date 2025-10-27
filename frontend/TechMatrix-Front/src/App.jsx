@@ -17,7 +17,7 @@ import HardwaresDashBoard from "./views/dashboard/hardwares/HardwaresDashBoard.j
 import UsersDashBoard from "./views/dashboard/users/UsersDashBoard.jsx";
 import CpuDashboard from "./views/dashboard/cpu/CpuDashboard.jsx";
 import GpuDashboard from "./views/dashboard/gpu/GpuDashboard.jsx";
-import Account from "./views/account/account.jsx";
+import Account from "./views/account/Account.jsx";
 import CreateCpuDashboard from "./views/dashboard/cpu/CreateCpuDashboard.jsx";
 import CreateGpuDashboard from "./views/dashboard/gpu/CreateGpuDashboard.jsx";
 

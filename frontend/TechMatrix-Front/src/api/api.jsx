@@ -74,3 +74,9 @@ export async function deleteGpu(id) {
     const deleteGpuResponse = await response.json();
     return deleteGpuResponse;
 }
+
+export async function getUserById(id) {
+    const response = await fetch(`http://localhost:3000/users/${id}`);
+    const userByIdResponse = await response.json();
+    return userByIdResponse;
+}
