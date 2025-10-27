@@ -37,7 +37,7 @@ export default function Account() {
                     <p>joined at: {user?.joined_at}</p>
 
                     <div class="account-buttons">
-                        <button>Edit</button>
+                        <button class="btn-edit">Edit</button>
                         <button class="btn-disconect" onClick={handleDisconnect}>Disconect</button>
                     </div>
                 </div>
