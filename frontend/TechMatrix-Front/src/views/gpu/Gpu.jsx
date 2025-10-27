@@ -9,7 +9,6 @@ export default function Gpu() {
         async function fetchData() {
             const gpu = await getDataGpu();
             setGpu(gpu);
-            setFilterGpu(gpu);
         }
         fetchData();
     }, []);

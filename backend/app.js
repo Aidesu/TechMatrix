@@ -12,7 +12,7 @@ await connectDB();
 app.use(express.json());
 app.use(cors());
 
-app.use("/users", usersRoute);
+app.use("/users", cors(), usersRoute);
 app.use("/cpu", cors(), cpuRoutes);
 app.use("/gpu", cors(), gpuRoutes);
 
