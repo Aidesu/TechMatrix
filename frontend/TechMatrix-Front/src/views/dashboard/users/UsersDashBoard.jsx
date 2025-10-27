@@ -32,6 +32,12 @@ export default function UsersDashBoard() {
         return (
             <>
                 <main class="admin">
+                    <button
+                        className="backBtn"
+                        onClick={() => window.history.back()}
+                    >
+                        Back
+                    </button>
                     <h1>[Auth] User dashboard</h1>
                     <section class="usersSectionDashboard">
                         <table>

@@ -19,6 +19,12 @@ export default function Dashboard() {
         return (
             <>
                 <main class="admin">
+                    <button
+                        className="backBtn"
+                        onClick={() => window.history.back()}
+                    >
+                        Back
+                    </button>
                     <h1>[Auth] dashboard</h1>
                     <p>
                         &gt; Initializing TechMatrix/dashboard <br />

@@ -65,6 +65,12 @@ export default function HardwaresDashBoard() {
         return (
             <>
                 <main class="admin">
+                    <button
+                        className="backBtn"
+                        onClick={() => window.history.back()}
+                    >
+                        Back
+                    </button>
                     <h1>[Auth] Hardwares dashboard</h1>
                     <p>
                         &gt; Initializing Editmanager-cpu <br />

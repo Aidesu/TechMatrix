@@ -52,6 +52,12 @@ export default function GpuDashboard() {
         return (
             <>
                 <main>
+                    <button
+                        className="backBtn"
+                        onClick={() => window.history.back()}
+                    >
+                        Back
+                    </button>
                     <h1>Gpu Dashboard</h1>
                     {gpu ? (
                         <>

@@ -52,6 +52,12 @@ export default function CpuDashboard() {
         return (
             <>
                 <main>
+                    <button
+                        className="backBtn"
+                        onClick={() => window.history.back()}
+                    >
+                        Back
+                    </button>
                     <h1>Cpu Dashboard</h1>
                     {cpu ? (
                         <>
