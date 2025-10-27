@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { getUserById } from "../../api/api";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Account() {
 
     const [user, setUser] = useState(null);
     const getLocalUser = localStorage.getItem("user");
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchData() {
@@ -15,6 +17,10 @@ export default function Account() {
         fetchData();
     }, [getLocalUser]);
 
+    const handleDisconnect = () => {
+        localStorage.removeItem("user");
+        navigate("/login");
+    }
 
 
     return (
@@ -33,7 +39,7 @@ export default function Account() {
 
                     <div class="account-buttons">
                         <button>Edit</button>
-                        <button class="btn-disconect">Disconect</button>
+                        <button class="btn-disconect" onClick={handleDisconnect}>Disconect</button>
                     </div>
                 </div>
 
