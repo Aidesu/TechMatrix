@@ -7,6 +7,12 @@ export default function Cpu() {
     return (
         <>
             <main>
+                <button
+                    className="backBtn"
+                    onClick={() => window.history.back()}
+                >
+                    Back
+                </button>
                 <p>
                     &gt; Initializing TechMatrix/hardwares/cpu system...
                     <br />

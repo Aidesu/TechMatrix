@@ -18,6 +18,12 @@ export default function GpuItem() {
     return (
         <>
             <main>
+                <button
+                    className="backBtn"
+                    onClick={() => window.history.back()}
+                >
+                    Back
+                </button>
                 {gpu ? (
                     <>
                         <p>

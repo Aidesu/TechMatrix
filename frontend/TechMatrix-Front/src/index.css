@@ -539,7 +539,6 @@ a:hover svg {
 
 /* ++++++++++++ Account ++++++++++++ */
 
-
 .account-container {
     display: flex;
     align-items: center;
@@ -653,9 +652,6 @@ a:hover svg {
     padding-left: 0.5rem;
 }
 
-
-
-
 .avatar {
     width: 40px;
     height: 40px;
@@ -668,4 +664,9 @@ a:hover svg {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.backBtn {
+    position: fixed;
+    left: 4rem;
 }
