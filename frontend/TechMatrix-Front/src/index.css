@@ -1,12 +1,15 @@
 :root {
     --bgColor1: #000000;
+    --secondBg1: #131313;
     --green: #008f11;
     --select: #00d419;
+    --already: #00670c;
     --red: #9c1414;
     --warn: #9c1414;
     --none: #232323;
     --alert: #c06d1b;
     --purple: #a513e9;
+    --blue: #2452d2;
 }
 
 @font-face {
@@ -61,6 +64,12 @@ a:hover {
 
 a:hover strong {
     color: var(--select);
+}
+
+input {
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: normal;
+    color: var(--green);
 }
 
 button {
@@ -272,8 +281,11 @@ a:hover svg {
 }
 
 .admin a {
-    text-decoration: underline;
-    color: var(--alert);
+    color: var(--blue);
+}
+
+.admin a span {
+    color: var(--blue);
 }
 
 .admin strong {
@@ -290,6 +302,7 @@ a:hover svg {
 
 .admin table {
     border-collapse: collapse;
+    border: solid var(--green) 2px;
 }
 
 .admin th {
@@ -503,4 +516,68 @@ a:hover svg {
         width: 90%;
         margin: 0 auto 15px auto;
     }
+}
+
+.dashboardItem {
+}
+
+.dashboardItem ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dashboardItem li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboardItem input {
+    width: 33%;
+    height: 2.5rem;
+    border-radius: 5px;
+    background-color: var(--secondBg1);
+    padding-left: 1rem;
+    border: none;
+    font-size: 20px;
+}
+
+.dashboardItem label {
+    width: 20%;
+    text-align: start;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.dashboardItem p {
+    width: 40%;
+    text-align: start;
+    margin: 0;
+    font-size: 22px;
+    color: var(--already);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin td button {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.admin td button svg {
+    fill: var(--red);
+}
+
+.admin svg {
+    fill: var(--purple);
+}
+
+#actionAdmin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }

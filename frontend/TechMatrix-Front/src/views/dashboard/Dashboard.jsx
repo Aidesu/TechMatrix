@@ -6,6 +6,7 @@ export default function Dashboard() {
             <main class="admin">
                 <h1>[Auth] dashboard</h1>
                 <p>
+                    &gt; Initializing TechMatrix/dashboard <br />
                     &gt; sudo auth --login admin <br />
                     password : <br />
                     [OK] Authenticated as <strong>auth</strong>
