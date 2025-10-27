@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { registerUser } from "../../api/api.jsx";
+import { Link } from "react-router-dom";
+
 
 
 export default function Register() {
@@ -140,6 +142,7 @@ export default function Register() {
                         />
                     </div>
                     {message && (<p class="formMessage ">{message}</p>)}
+                    <Link to="/login">Back to login</Link>
                     <br />
                     <button type="submit" class="btnRegister">Sign Up</button>
                 </form>
