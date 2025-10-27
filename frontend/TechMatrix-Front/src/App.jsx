@@ -1,35 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import Header from "./views/layouts/partials/Header.jsx";
+import Footer from "./views/layouts/partials/Footer.jsx";
+import "./App.css";
+import HomePage from "./views/home/HomePage.jsx";
+import Hardwares from "./views/hardwares/Hardwares.jsx";
+import Cpu from "./views/cpu/Cpu.jsx";
+import CpuItem from "./views/cpu/CpuItem.jsx";
+import Gpu from "./views/gpu/Gpu.jsx";
+import GpuItem from "./views/gpu/GpuItem.jsx";
+import About from "./views/About/About.jsx";
+import NotFound from "./views/notFound/NotFound.jsx";
+import Register from "./views/auth/Register.jsx";
+import Login from "./views/auth/Login.jsx";
+import Dashboard from "./views/dashboard/Dashboard.jsx";
+import HardwaresDashBoard from "./views/dashboard/hardwares/HardwaresDashBoard.jsx";
+import UsersDashBoard from "./views/dashboard/users/UsersDashBoard.jsx";
+import CpuDashboard from "./views/dashboard/cpu/CpuDashboard.jsx";
+import GpuDashboard from "./views/dashboard/gpu/GpuDashboard.jsx";
+import Account from "./views/account/Account.jsx";
+import CreateCpuDashboard from "./views/dashboard/cpu/CreateCpuDashboard.jsx";
+import CreateGpuDashboard from "./views/dashboard/gpu/CreateGpuDashboard.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <>
+            <Header />
+            <Routes>
+                <Route path={`/`} element={<HomePage />} />
+                <Route path={`/hardwares`} element={<Hardwares />} />
+                <Route path={`/hardwares/cpu`} element={<Cpu />} />
+                <Route path={`/hardwares/cpu/:id`} element={<CpuItem />} />
+                <Route path={`/hardwares/gpu`} element={<Gpu />} />
+                <Route path={`/hardwares/gpu/:id`} element={<GpuItem />} />
+                <Route path={`/about`} element={<About />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/account" element={<Account />} />
+                <Route path={`/dashboard`} element={<Dashboard />} />
+                <Route path={`/dashboard/users`} element={<UsersDashBoard />} />
+                <Route
+                    path={`/dashboard/hardwares`}
+                    element={<HardwaresDashBoard />}
+                />
+                <Route
+                    path={`/dashboard/hardwares/gpu/:id`}
+                    element={<GpuDashboard />}
+                />
+                <Route
+                    path={`/dashboard/hardwares/cpu/:id`}
+                    element={<CpuDashboard />}
+                />
+                <Route
+                    path={`/dashboard/hardwares/new/cpu`}
+                    element={<CreateCpuDashboard />}
+                />
+                <Route
+                    path={`/dashboard/hardwares/new/gpu`}
+                    element={<CreateGpuDashboard />}
+                />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+        </>
+    );
 }
 
-export default App
+export default App;

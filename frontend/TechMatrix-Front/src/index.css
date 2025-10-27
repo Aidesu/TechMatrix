@@ -1,68 +1,684 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --bgColor1: #000000;
+    --secondBg1: #131313;
+    --green: #008f11;
+    --select: #00d419;
+    --already: #00670c;
+    --red: #9c1414;
+    --warn: #9c1414;
+    --none: #232323;
+    --alert: #c06d1b;
+    --purple: #a513e9;
+    --blue: #2452d2;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+@font-face {
+    font-family: digital-7;
+    src: url("/fonts/digital-7.ttf");
 }
+
+@media screen and (width <=900px) {
+    #mainSectionCpu {
+        grid-template-columns: 50% 50% !important;
+    }
+}
+
+@media screen and (width <=600px) {
+    #mainSectionCpu {
+        grid-template-columns: 90% !important;
+    }
+}
+
+* {
+    color: var(--green);
+    font-family: digital-7, Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    cursor: url("/cursors/cursor_normal.png") 9 1, default;
+}
+
+h1,
+#headerTitle {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#headerTitle {
+    display: flex;
+    align-items: end;
+}
+
+#headerTitle img {
+    height: 3rem;
+    margin-right: 0.5rem;
+}
+
+img #headerTitle:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+strong {
+    font-size: 50px;
+}
+
+main {
+    margin-top: 6rem;
+    min-height: 90vh;
+    position: relative;
+}
+
+button,
+a,
+a strong,
+a img,
+Link {
+    cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
+}
+
 a:hover {
-  color: #535bf2;
+    color: var(--select);
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+a:hover strong {
+    color: var(--select);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+input {
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: normal;
+    color: var(--green);
+}
+
+input:hover {
+    cursor: url("/cursors/cursor_text.png") 9 2, text;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+    font-size: 20px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: solid var(--green) 3px;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    font-weight: 600;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+hr {
+    background-color: var(--green);
+    border: none;
+    height: 2px;
+    width: 95%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 96%;
+    background-color: var(--bgColor1);
+    z-index: 9999999;
+    max-width: 2200px;
+}
+
+header hr {
+    width: 100%;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+ol {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+p {
+    text-align: left;
+    font-weight: 600;
+    line-height: 1.7;
+    font-size: 25px;
+}
+
+p a {
+    text-decoration: none;
+}
+
+pre {
+    margin-top: 5rem;
+    white-space: "pre";
+    font-family: monospace;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    margin-top: 5rem;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 2200px;
+    margin-top: 5rem;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.54rem;
+}
+
+footer li {
+    text-align: start;
+}
+
+p strong {
+    font-size: 25px;
+    color: var(--red);
+}
+
+p span {
+    font-size: 25px;
+    color: var(--alert);
+}
+
+h1 span {
+    color: var(--alert);
+}
+
+.inView {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+#hardwaresMainSection {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hardwareCard {
+    background-color: transparent;
+    width: 28%;
+    height: 20rem;
+    border: solid var(--green) 10px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+    z-index: 999;
+}
+
+.hardwareCard svg {
+    width: 80%;
+    fill: var(--green);
+    z-index: -5;
+}
+
+.hardwareCard a:hover {
+    cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
+}
+
+.hardwareCard img {
+    fill: var(--green);
+}
+
+.hardwareCard a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a:hover svg {
+    fill: var(--select);
+}
+
+.hardwareCard:hover {
+    border: solid var(--select) 10px;
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+.unvalable a:hover svg {
+    fill: var(--none);
+}
+
+.unvalable:hover {
+    border: solid var(--none) 10px;
+    transform: scale(1);
+    transition: 0.2s;
+}
+
+.unvalable {
+    border: solid var(--none) 10px;
+}
+
+.unvalable svg {
+    fill: var(--none);
+}
+
+.unvalable a:hover {
+    cursor: url("/cursors/cursor_normal.png") 9 1, pointer;
+}
+
+.admin {
+    color: var(--purple);
+}
+
+.admin h1 {
+    color: var(--purple);
+}
+
+.admin span {
+    color: #c06d1b;
+}
+
+.admin ul {
+    margin: 0;
+    list-style: none;
+}
+
+.admin a {
+    color: var(--blue);
+}
+
+.admin a span {
+    color: var(--blue);
+}
+
+.admin strong {
+    color: var(--purple);
+}
+
+.admin a:hover {
+    color: var(--purple);
+}
+
+.admin:hover {
+    color: var(--red);
+}
+
+.admin table {
+    border-collapse: collapse;
+    border: solid var(--green) 2px;
+}
+
+.admin th {
+    border: solid var(--purple) 2px;
+    padding: 0.2rem 1rem 0.22rem 1rem;
+    font-size: 30px;
+    color: var(--purple);
+}
+
+.admin td {
+    border: solid var(--green) 2px;
+    padding: 0.2rem 1rem 0.22rem 1rem;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#mainSectionComponent {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    row-gap: 4rem;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+#mainSectionGpu {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    row-gap: 4em;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+#mainSectionGpu .componentCard {
+    justify-content: start;
+}
+
+#mainSectionGpu ul {
+    margin-left: 1rem;
+}
+
+.componentCard {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: solid var(--green) 5px;
+    padding: 0rem;
+    border-radius: 25px;
+    justify-content: space-around;
+    position: relative;
+    height: 10rem;
+}
+
+.componentCard:hover {
+    border: solid var(--select) 5px;
+}
+
+.componentCard ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+.componentCard li {
+    font-size: 25px;
+}
+
+.componentCard p {
+    padding: 0;
+    margin: 0;
+}
+
+.componentCard a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+}
+
+#cpuItemSection {
+    display: flex;
+}
+
+#cpuItemSection ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+#cpuItemSection li {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+#cpuItemSection img {
+    border-radius: 25px;
+    width: 40%;
+    border: solid var(--green) 8px;
+}
+
+#mainNotFound pre {
+    position: absolute;
+    top: 2rem;
+    right: 10rem;
+    font-size: 20px;
+    color: var(--red);
+}
+
+#mainNotFound h1 {
+    color: var(--alert);
+}
+
+#ulGpuItem li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ++++++++++++++ REGISTER +++++++++++++++++ */
+.divForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    width: 65%;
+    margin-bottom: 20px;
+}
+
+.labelForm {
+    width: 260px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.btnRegister {
+    margin-top: 15px;
+}
+
+.inputForm {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 5px;
+    background-color: #232323;
+    color: white;
+    font-size: 18px;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: normal;
+}
+
+.formMessage {
+    color: var(--red);
+}
+
+@media (max-width: 768px) {
+    .divForm {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 90%;
+        margin: 0 auto 15px auto;
+    }
+}
+
+/* ++++++++ LOGIN +++++++++++ */
+
+.divLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    width: 65%;
+    margin-bottom: 20px;
+}
+
+.labelLogin {
+    width: 260px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.inputLogin {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 5px;
+    background-color: #232323;
+    color: white;
+    font-size: 16px;
+}
+
+.loginMessage {
+    color: var(--red);
+}
+
+@media (max-width: 768px) {
+    .divLogin {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 90%;
+        margin: 0 auto 15px auto;
+    }
+}
+
+/* ++++++++++++ Account ++++++++++++ */
+
+.account-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.account-image img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: solid var(--already) 5px;
+    border-radius: 15px;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.account-buttons {
+    display: flex;
+    margin-top: 40px;
+}
+
+.btn-disconect {
+    color: var(--red);
+    border: solid var(--red) 3px;
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+}
+
+.btn-edit {
+    color: var(--blue);
+    border: solid var(--blue) 3px;
+    position: fixed;
+    bottom: 8rem;
+    right: 5.5rem;
+}
+
+@media (max-width: 768px) {
+    .account-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.dashboardItem {
+}
+
+.dashboardItem ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dashboardItem li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboardItem input {
+    width: 33%;
+    height: 2.5rem;
+    border-radius: 5px;
+    background-color: var(--secondBg1);
+    padding-left: 1rem;
+    border: none;
+    font-size: 20px;
+}
+
+.dashboardItem label {
+    width: 20%;
+    text-align: start;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.dashboardItem p {
+    width: 40%;
+    text-align: start;
+    margin: 0;
+    font-size: 22px;
+    color: var(--already);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin td button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    padding-right: 0.5rem;
+    cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
+}
+
+.admin td button svg {
+    fill: var(--red);
+}
+
+.admin svg {
+    fill: var(--purple);
+    cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
+}
+
+#actionAdmin a {
+    padding-left: 0.5rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: solid var(--already) 3px;
+    object-fit: cover;
+}
+
+.user-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.backBtn {
+    position: absolute;
+    left: -8rem;
 }
