@@ -23,7 +23,7 @@ export default function Account() {
 
 
     return (
-        <main>
+        <main class="main-account">
             <h1>My account</h1>
             <div class="account-container">
                 <div class="account-image">
@@ -35,13 +35,11 @@ export default function Account() {
                     <p>Last name: {user?.name.last_name}</p>
                     <p>Email address: {user?.email}</p>
                     <p>joined at: {user?.joined_at}</p>
-
-                    <div class="account-buttons">
-                        <button class="btn-edit">Edit</button>
-                        <button class="btn-disconect" onClick={handleDisconnect}>Disconect</button>
-                    </div>
                 </div>
-
+                <div class="account-buttons">
+                    <button class="btn-edit">Edit</button>
+                    <button class="btn-disconect" onClick={handleDisconnect}>Disconect</button>
+                </div>
             </div>
 
         </main>
