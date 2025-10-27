@@ -17,11 +17,18 @@ export default function GpuItem() {
 
     return (
         <>
-            <h1>gpu</h1>
             <main>
-                <section id="cpuItemSection">
-                    {gpu ? (
-                        <>
+                {gpu ? (
+                    <>
+                        <p>
+                            &gt; Initializing TechMatrix/hardwares/gpu/
+                            {params.id + " "}
+                            system...
+                            <br />
+                            [OK] Connection established to hardware/gpu
+                            database.
+                        </p>
+                        <section id="cpuItemSection">
                             <img src={gpu.image} alt="gpu " />
                             <ul>
                                 <li>
@@ -39,11 +46,12 @@ export default function GpuItem() {
                                 <li>Chipset : {gpu.chipset}</li>
                                 <li>Interface : {gpu.interface}</li>
                             </ul>
-                        </>
-                    ) : (
-                        <h1>Loading</h1>
-                    )}
-                </section>
+                        </section>
+                    </>
+                ) : (
+                    <h1>Loading</h1>
+                )}
+
                 <p>
                     [OK] gpu module loaded.
                     <br />

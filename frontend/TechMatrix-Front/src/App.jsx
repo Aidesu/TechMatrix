@@ -15,6 +15,8 @@ import Login from "./views/auth/Login.jsx";
 import Dashboard from "./views/dashboard/Dashboard.jsx";
 import HardwaresDashBoard from "./views/dashboard/hardwares/HardwaresDashBoard.jsx";
 import UsersDashBoard from "./views/dashboard/users/UsersDashBoard.jsx";
+import CpuDashboard from "./views/dashboard/cpu/CpuDashboard.jsx";
+import GpuDashboard from "./views/dashboard/gpu/GpuDashboard.jsx";
 
 function App() {
     return (
@@ -31,11 +33,19 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path={`/dashboard`} element={<Dashboard />} />
+                <Route path={`/dashboard/users`} element={<UsersDashBoard />} />
                 <Route
                     path={`/dashboard/hardwares`}
                     element={<HardwaresDashBoard />}
                 />
-                <Route path={`/dashboard/users`} element={<UsersDashBoard />} />
+                <Route
+                    path={`/dashboard/hardwares/gpu/:id`}
+                    element={<GpuDashboard />}
+                />
+                <Route
+                    path={`/dashboard/hardwares/cpu/:id`}
+                    element={<CpuDashboard />}
+                />
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
