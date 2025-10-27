@@ -1,4 +1,21 @@
+import { useEffect, useState } from "react";
+import { getUserById } from "../../api/api";
+import { Link } from "react-router-dom";
+
 export default function HomePage() {
+    const userId = localStorage.getItem("user");
+    const [user, setUser] = useState(null);
+
+    if (userId) {
+        useEffect(() => {
+            async function fetchData() {
+                const userData = await getUserById(userId);
+                setUser(userData);
+            }
+            fetchData();
+        }, [userId]);
+    }
+
     const titleAscii = `                                                                                                    
      mmmmmmmm                      mm        mmm  mmm                                   ##              
      """##"""                      ##        ###  ###              ##                   ""              
@@ -9,6 +26,7 @@ export default function HomePage() {
         ""       """""     """""   ""    ""  ""    ""   """" ""     """"    ""       """"""""  """  """ 
                                                                                                         
                                                                                                         `;
+
     return (
         <>
             <main>
@@ -18,7 +36,7 @@ export default function HomePage() {
                     [OK] Connection established to TechMatrix database.
                     <br />
                     <br />
-                    Welcome, user.
+                    Welcome, {user ? user.username : "user"}.
                     <br />
                     <br />
                     TechMatrix is your digital gateway to the world of PC
@@ -33,14 +51,17 @@ export default function HomePage() {
                     <br />
                     &gt; Access main modules:
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;[1] <a href="">Hardware Database</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;[1]{" "}
+                    <Link to="/hardwares">Hardware Database</Link>
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;[2]{" "}
-                    <a href="">Compatibility Scanner</a>
+                    <Link to="/">Compatibility Scanner</Link>
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;[3] <a href="">Build Optimizer</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;[3]{" "}
+                    <Link to="/">Build Optimizer</Link>
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;[4] <a href="">User Account</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;[4]{" "}
+                    <Link to="/account">User Account</Link>
                     <br />
                     <br />
                     &gt; Tip: Use your knowledge. Upgrade with precision.

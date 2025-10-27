@@ -1,7 +1,15 @@
+import RedirectToHome from "../../../assets/components/redirect/RedirectToHome";
+
 export default function CreateCpuDashboard() {
     return (
         <>
             <main>
+                <button
+                    className="backBtn"
+                    onClick={() => window.history.back()}
+                >
+                    Back
+                </button>
                 <h1>Create new cpu</h1>
             </main>
         </>

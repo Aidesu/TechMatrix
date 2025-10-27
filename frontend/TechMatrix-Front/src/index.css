@@ -52,6 +52,11 @@ h1,
     margin-right: 0.5rem;
 }
 
+img #headerTitle:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
 strong {
     font-size: 50px;
 }
@@ -59,6 +64,7 @@ strong {
 main {
     margin-top: 6rem;
     min-height: 90vh;
+    position: relative;
 }
 
 button,
@@ -83,6 +89,10 @@ input {
     color: var(--green);
 }
 
+input:hover {
+    cursor: url("/cursors/cursor_text.png") 9 2, text;
+}
+
 button {
     font-size: 20px;
     border-radius: 25px;
@@ -101,15 +111,22 @@ hr {
     background-color: var(--green);
     border: none;
     height: 2px;
+    width: 95%;
 }
 
 header {
     position: fixed;
     top: 0;
-    left: 2%;
+    left: 50%;
+    transform: translate(-50%);
     width: 96%;
     background-color: var(--bgColor1);
     z-index: 9999999;
+    max-width: 2200px;
+}
+
+header hr {
+    width: 100%;
 }
 
 header div {
@@ -163,10 +180,14 @@ pre {
 footer {
     width: 100%;
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translate(-50%);
     height: 10rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    max-width: 2200px;
+    margin-top: 5rem;
 }
 
 footer ul {
@@ -333,8 +354,7 @@ a:hover svg {
 #mainSectionComponent {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: repeat(8, 25%);
-    row-gap: 4em;
+    row-gap: 4rem;
     gap: 2rem;
     justify-content: center;
     margin-bottom: 4rem;
@@ -529,18 +549,13 @@ a:hover svg {
     }
 }
 
-
-
 /* ++++++++++++ Account ++++++++++++ */
-
 
 .account-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
-
-
 }
 
 .account-image img {
@@ -585,7 +600,8 @@ a:hover svg {
     }
 }
 
-.dashboardItem {}
+.dashboardItem {
+}
 
 .dashboardItem ul {
     display: flex;
@@ -648,9 +664,6 @@ a:hover svg {
     padding-left: 0.5rem;
 }
 
-
-
-
 .avatar {
     width: 40px;
     height: 40px;
@@ -663,4 +676,9 @@ a:hover svg {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.backBtn {
+    position: absolute;
+    left: -8rem;
 }
