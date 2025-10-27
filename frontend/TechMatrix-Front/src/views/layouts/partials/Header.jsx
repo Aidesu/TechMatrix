@@ -8,7 +8,10 @@ export default function Header() {
 
     useEffect(() => {
         async function fetchData() {
+            if (!userId) return;
             const userData = await getUserById(userId);
+            console.log(userId);
+            console.log(userData);
             setUser(userData);
         }
         fetchData();

@@ -4,12 +4,9 @@ import { loginUser } from "../../api/api.jsx";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-
-
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [message, setMessage] = useState('');
-
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [message, setMessage] = useState("");
 
     const navigate = useNavigate();
 
@@ -19,21 +16,20 @@ export default function Login() {
         const credentials = { email, password };
 
         try {
-
             const infoLogin = await loginUser(credentials);
 
             if (infoLogin.success) {
-                setMessage("Login successful !")
-                localStorage.setItem("user", JSON.stringify(infoLogin.user._id))
+                setMessage("Login successful !");
+                localStorage.setItem("user", infoLogin.user._id);
                 navigate("/");
+                window.location.reload();
             } else {
                 setMessage(infoLogin.message || "Password or email invalid");
             }
-
         } catch (err) {
-            setMessage("Server error")
+            setMessage("Server error");
         }
-    }
+    };
 
     return (
         <>
@@ -41,32 +37,35 @@ export default function Login() {
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <div class="divLogin">
-                        <label htmlFor="email" class="labelLogin" >Email address : </label>
+                        <label htmlFor="email" class="labelLogin">
+                            Email address :{" "}
+                        </label>
                         <input
                             class="inputLogin"
-                            type='email'
-                            placeholder='Email'
+                            type="email"
+                            placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div class="divLogin">
-                        <label htmlFor="password" class="labelLogin" >Password : </label>
+                        <label htmlFor="password" class="labelLogin">
+                            Password :{" "}
+                        </label>
                         <input
                             class="inputLogin"
-                            type='password'
-                            placeholder='Password'
+                            type="password"
+                            placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                        /></div>
+                        />
+                    </div>
 
                     <Link to="/register">Sign in</Link>
                     <p class="loginMessage">{message}</p>
-                    <button type='submit'>Login</button>
+                    <button type="submit">Login</button>
                 </form>
-
             </main>
         </>
-    )
+    );
 }
-

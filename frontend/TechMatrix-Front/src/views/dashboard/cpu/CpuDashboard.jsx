@@ -11,7 +11,6 @@ export default function CpuDashboard() {
     const [formCpu, setFormCpu] = useState({});
     let navigate = useNavigate();
 
-    console.log(params);
     useEffect(() => {
         async function fetchData() {
             const data = await getDataOneCpu(params.id);
@@ -26,8 +25,6 @@ export default function CpuDashboard() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        console.log(formCpu);
 
         const cpuData = await editCpu(cpu._id, formCpu);
         if (cpuData.success) {
