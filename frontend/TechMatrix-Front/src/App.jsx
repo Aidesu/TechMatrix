@@ -17,6 +17,8 @@ import HardwaresDashBoard from "./views/dashboard/hardwares/HardwaresDashBoard.j
 import UsersDashBoard from "./views/dashboard/users/UsersDashBoard.jsx";
 import CpuDashboard from "./views/dashboard/cpu/CpuDashboard.jsx";
 import GpuDashboard from "./views/dashboard/gpu/GpuDashboard.jsx";
+import CreateCpuDashboard from "./views/dashboard/cpu/CreateCpuDashboard.jsx";
+import CreateGpuDashboard from "./views/dashboard/gpu/CreateGpuDashboard.jsx";
 
 function App() {
     return (
@@ -45,6 +47,14 @@ function App() {
                 <Route
                     path={`/dashboard/hardwares/cpu/:id`}
                     element={<CpuDashboard />}
+                />
+                <Route
+                    path={`/dashboard/hardwares/new/cpu`}
+                    element={<CreateCpuDashboard />}
+                />
+                <Route
+                    path={`/dashboard/hardwares/new/gpu`}
+                    element={<CreateGpuDashboard />}
                 />
                 <Route path="*" element={<NotFound />} />
             </Routes>
