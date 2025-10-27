@@ -44,7 +44,7 @@ h1,
 
 #headerTitle {
     display: flex;
-    align-items: center;
+    align-items: end;
 }
 
 #headerTitle img {
