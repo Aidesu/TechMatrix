@@ -5,6 +5,7 @@ import { getUserById, updateUser } from "../../api/api";
 export default function EditAccount() {
 
     const userId = localStorage.getItem("user");
+    const [message, setMessage] = useState("")
 
     const [formUser, setFormUser] = useState({
         username: "",
@@ -36,7 +37,22 @@ export default function EditAccount() {
 
     //gestion du chargement des champ
     const handleChange = (e) => {
-        setFormUser({ ...formUser, [e.target.name]: e.target.value })
+        const { name, value } = e.target;
+
+        if (name === "first_name" || name === "last_name") {
+            setFormUser((oldForm) => ({
+                ...oldForm,
+                name: {
+                    ...oldForm.name,
+                    [name]: value
+                }
+            }))
+        } else {
+            setFormUser((oldform) => ({
+                ...oldform,
+                [name]: value
+            }))
+        }
     };
 
 
@@ -50,18 +66,26 @@ export default function EditAccount() {
             password: formUser.password,
             image: formUser.image,
             name: {
-                first_name: formUser.first_name,
-                last_name: formUser.last_name
+                first_name: formUser.name.first_name,
+                last_name: formUser.name.last_name
             }
         };
 
         //appel api 
         const response = await updateUser(userId, updatedUser)
 
-        if (response.message === "User update successfully") {
+        if (response.message === "User update") {
             setMessage("Account update successfully")
+            setFormUser({
+                username: "",
+                name: { first_name: "", last_name: "" },
+                email: "",
+                password: "",
+                image: ""
+            });
+
         } else {
-            setMessage("Update failed" + response.message)
+            setMessage("Update failed")
         }
     }
 
@@ -149,10 +173,11 @@ export default function EditAccount() {
                 </div>
 
                 <div className="edit-buttons">
+                    <p className="">{message}</p>
                     <button type="submit">Save changes</button>
-                    <button>Cancel</button>
-
+                    <button className="cancelEdit">Cancel</button>
                 </div>
+
             </form>
         </main>
     );
