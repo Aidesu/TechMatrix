@@ -42,12 +42,12 @@ export async function addUserControlleur(req, res) {
     try {
         const sucess = await addUser(req.body);
         if (!sucess) {
-            return res.status(409).json({ message: "email already exist" });
+            return res.status(409).json({ success: false, message: "email already exist" });
         }
 
-        return res.status(200).json({ message: "Resgistration Successful" });
+        return res.status(200).json({ success: true, message: "Resgistration Successful" });
     } catch (err) {
-        return res.status(500).json({ message: err.message });
+        return res.status(500).json({ success: false, message: err.message });
     }
 }
 
