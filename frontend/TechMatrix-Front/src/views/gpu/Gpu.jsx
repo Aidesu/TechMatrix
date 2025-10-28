@@ -16,6 +16,12 @@ export default function Gpu() {
     return (
         <>
             <main>
+                <button
+                    className="backBtn"
+                    onClick={() => window.history.back()}
+                >
+                    Back
+                </button>
                 <p>
                     &gt; Initializing TechMatrix/hardwares/gpu system...
                     <br />

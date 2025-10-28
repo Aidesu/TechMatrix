@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { getUserById } from "../../api/api";
 import { useNavigate } from "react-router-dom";
-
 
 export default function Account() {
     const [user, setUser] = useState(null);
@@ -28,6 +27,9 @@ export default function Account() {
 
     return (
         <main class="main-account">
+            <button className="backBtn" onClick={() => window.history.back()}>
+                Back
+            </button>
             <h1>My account</h1>
             <div class="account-container">
                 <div class="account-image">
@@ -45,7 +47,6 @@ export default function Account() {
                     <button class="btn-disconect" onClick={handleDisconnect}>Disconect</button>
                 </div>
             </div>
-
         </main>
     );
 }

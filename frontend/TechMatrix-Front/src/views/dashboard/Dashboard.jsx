@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { getUserById } from "../../api/api";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import RedirectToHome from "../../assets/components/redirect/RedirectToHome";
 
 export default function Dashboard() {
     const id = localStorage.getItem("user");
     const [user, setUser] = useState(null);
-    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchData() {
@@ -16,15 +15,16 @@ export default function Dashboard() {
         fetchData();
     }, [id]);
 
-    if (user) {
-        console.log("username : " + user.username);
-        console.log("role : " + user.role);
-    }
-
     if (user && user.role == "admin") {
         return (
             <>
                 <main class="admin">
+                    <button
+                        className="backBtn"
+                        onClick={() => window.history.back()}
+                    >
+                        Back
+                    </button>
                     <h1>[Auth] dashboard</h1>
                     <p>
                         &gt; Initializing TechMatrix/dashboard <br />
@@ -62,6 +62,6 @@ export default function Dashboard() {
             </>
         );
     } else {
-        navigate("http://localhost:5173/404");
+        return <RedirectToHome />;
     }
 }
