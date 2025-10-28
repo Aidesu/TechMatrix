@@ -12,6 +12,11 @@
     --blue: #2452d2;
 }
 
+[data-theme="white"] {
+    --bgColor1: #f1f1f1;
+    --secondBg1: #e1d7d7;
+}
+
 @font-face {
     font-family: digital-7;
     src: url("/fonts/digital-7.ttf");
@@ -71,7 +76,8 @@ button,
 a,
 a strong,
 a img,
-Link {
+Link,
+#inputDivAi svg {
     cursor: url("/cursors/cursor_pointer.png") 9 1, pointer;
 }
 
@@ -736,3 +742,89 @@ a:hover svg {
     position: absolute;
     left: -8rem;
 }
+
+#themeBtn img {
+    width: 3rem;
+}
+
+#themeBtn {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#inputDivAi {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+#inputDivAi input {
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #232323;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: normal;
+    width: 80%;
+}
+
+#inputDivAi button {
+    border-radius: 50%;
+    padding: 0;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inputDivAi button:hover {
+    background-color: var(--none);
+}
+
+#inputDivAi svg {
+    height: 3rem;
+    width: 3rem;
+    fill: var(--green);
+}
+
+#mainAi ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: end;
+    gap: 1rem;
+    height: 75vh;
+    overflow-y: scroll;
+    scrollbar-width: 5px;
+    scrollbar-color: var(--bgColor1) var(--bgColor1);
+    padding: 2rem;
+}
+
+#mainAi li {
+    background-color: var(--secondBg1);
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+#mainAi p {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    letter-spacing: normal;
+}
+
+#mainAi h3 {
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+

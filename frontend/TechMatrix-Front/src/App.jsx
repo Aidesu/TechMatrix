@@ -21,12 +21,13 @@ import Account from "./views/account/Account.jsx";
 import EditAccount from "./views/account/EditAccount.jsx";
 import CreateCpuDashboard from "./views/dashboard/cpu/CreateCpuDashboard.jsx";
 import CreateGpuDashboard from "./views/dashboard/gpu/CreateGpuDashboard.jsx";
+import AskAiView from "./views/askAi/AskAi.jsx";
 
 function App() {
     return (
         <>
             <Header />
-            <Routes>
+            <Routes data-theme="white">
                 <Route path={`/`} element={<HomePage />} />
                 <Route path={`/hardwares`} element={<Hardwares />} />
                 <Route path={`/hardwares/cpu`} element={<Cpu />} />
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/edit-account" element={<EditAccount />} />
                 <Route path={`/dashboard`} element={<Dashboard />} />
                 <Route path={`/dashboard/users`} element={<UsersDashBoard />} />
+                <Route path={`/gaius`} element={<AskAiView />} />
                 <Route
                     path={`/dashboard/hardwares`}
                     element={<HardwaresDashBoard />}
