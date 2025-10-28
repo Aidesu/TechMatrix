@@ -23,6 +23,12 @@ export default function Header() {
                         <img src="/TechMatrixLogo.png" alt="Techmatrix logo" />
                         <strong>T</strong>ech<strong>M</strong>atrix
                     </Link>
+                    <button id="themeBtn">
+                        <img
+                            src="/themeLogo/WhiteModeLogo.png"
+                            alt="Theme logo"
+                        />
+                    </button>
                     <nav>
                         <ul>
                             {user && user.role == "admin" ? (
@@ -37,6 +43,9 @@ export default function Header() {
                                 <></>
                             )}
                             <li>
+                                <Link to="/gaius">Gaius AI</Link>
+                            </li>
+                            <li>
                                 <Link to="/">Home</Link>
                             </li>
                             <li>
@@ -47,10 +56,16 @@ export default function Header() {
                             </li>
                             <li>
                                 {user ? (
-                                    <Link className="user-link" to="/account">{user.username}
-                                        <img src={user.image || "https://bleedingcool.com/wp-content/uploads/2023/10/fallout-1-900x900.jpg"} class="avatar"></img>
+                                    <Link className="user-link" to="/account">
+                                        {user.username}
+                                        <img
+                                            src={
+                                                user.image ||
+                                                "https://bleedingcool.com/wp-content/uploads/2023/10/fallout-1-900x900.jpg"
+                                            }
+                                            class="avatar"
+                                        ></img>
                                     </Link>
-
                                 ) : (
                                     <Link to="/login">Sign In</Link>
                                 )}

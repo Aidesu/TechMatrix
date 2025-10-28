@@ -90,3 +90,13 @@ export async function getUserById(id) {
     const userByIdResponse = await response.json();
     return userByIdResponse;
 }
+
+export async function askAi(message) {
+    const response = await fetch(`http://localhost:3000/ai/ask`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ question: message }),
+    });
+    const aiResponse = await response.json();
+    return aiResponse;
+}
