@@ -600,8 +600,62 @@ a:hover svg {
     }
 }
 
-.dashboardItem {
+/* +++++++ EDIT ACCOUNT ++++++++ */
+
+.divEdit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    width: 65%;
+    margin-bottom: 20px;
 }
+
+.labelEdit {
+    width: 260px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.cancelEdit {
+    color: var(--red);
+    border: solid var(--red) 3px;
+}
+
+
+
+.inputEdit {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 5px;
+    background-color: #232323;
+    color: white;
+    font-size: 18px;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: normal;
+}
+
+
+
+@media (max-width: 768px) {
+    .divEdit {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 90%;
+        margin: 0 auto 15px auto;
+    }
+}
+
+.dashboardItem {}
 
 .dashboardItem ul {
     display: flex;

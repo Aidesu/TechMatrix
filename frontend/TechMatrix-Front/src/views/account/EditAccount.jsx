@@ -175,7 +175,7 @@ export default function EditAccount() {
                 <div className="edit-buttons">
                     <p className="">{message}</p>
                     <button type="submit">Save changes</button>
-                    <button>Cancel</button>
+                    <button className="cancelEdit">Cancel</button>
                 </div>
 
             </form>
