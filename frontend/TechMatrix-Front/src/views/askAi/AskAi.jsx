@@ -4,6 +4,7 @@ import { askAi } from "../../api/api";
 export default function AskAiView() {
     const [response, setResponse] = useState(null);
     const [message, setMessage] = useState(null);
+    const [loading, setLoading] = useState(false);
     let history = JSON.parse(localStorage.getItem("aiHistory")) || [];
 
     const handleChange = async (e) => {
@@ -12,10 +13,14 @@ export default function AskAiView() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        setMessage("");
 
         const response = await askAi(message);
         history.push(response);
         setResponse(response);
+        setLoading(false);
+
         localStorage.setItem("aiHistory", JSON.stringify(history));
     };
 
@@ -34,10 +39,16 @@ export default function AskAiView() {
                             : ""}
                     </ul>
                     <div id="inputDivAi">
+                        {loading ? (
+                            <h3>Gaius von valbazard is thinking...</h3>
+                        ) : (
+                            ""
+                        )}
                         <input
                             type="text"
                             onChange={handleChange}
                             placeholder="Enter your question here..."
+                            value={message}
                         />
                         <button type="submit">
                             <svg

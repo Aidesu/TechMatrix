@@ -706,6 +706,7 @@ a:hover svg {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    position: relative;
 }
 
 #inputDivAi input {
@@ -764,4 +765,11 @@ a:hover svg {
     padding: 0;
     font-family: monospace;
     letter-spacing: normal;
+}
+
+#mainAi h3 {
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translate(-50%);
 }
