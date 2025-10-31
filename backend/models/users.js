@@ -64,11 +64,11 @@ export async function updateUser(newUser) {
     }
 
     user.name.first_name = newUser.name.first_name ?? user.name.first_name;
-    user.name.last_name = newUser.name.last_name || user.name.last_name;
-    user.username = newUser.username || user.username;
-    user.password = newUser.password || user.password;
-    user.email = newUser.email || user.email;
-    user.image = newUser.image || user.image;
+    user.name.last_name = newUser.name.last_name ?? user.name.last_name;
+    user.username = newUser.username ?? user.username;
+    user.password = newUser.password ?? user.password;
+    user.email = newUser.email ?? user.email;
+    user.image = newUser.image ?? user.image;
     user.role = newUser.role ?? user.role;
 
     await user.save();
